@@ -9,10 +9,10 @@
         </div>
      <div class="pop-up__main">
             <ul class="pop-up__dots">
-                <li class="pop-up__dot"><a href="#" class="active" data-dot="pop-up-step-1"></a></li>
-                <li class="pop-up__dot"><a href="#" data-dot="pop-up-step-2"></a></li>
-                <li class="pop-up__dot"><a href="#" data-dot="pop-up-step-3"></a></li>
-                <li class="pop-up__dot"><a href="#" data-dot="pop-up-step-4"></a></li>
+                <li class="pop-up__dot"><a class="active" data-dot=".pop-up-step-1"></a></li>
+                <li class="pop-up__dot"><a data-dot=".pop-up-step-2"></a></li>
+                <li class="pop-up__dot"><a data-dot=".pop-up-step-3"></a></li>
+                <li class="pop-up__dot"><a data-dot=".pop-up-step-4"></a></li>
             </ul>
             <div class="pop-up-step pop-up-step-1 active">
                <div class="pop-up-step__cols"> 
@@ -41,7 +41,7 @@
             </div>
             <div class="pop-up-step pop-up-step-2">
             <div class="pop-up-step__cols"> 
-                   <h3 class="pop-up-step__title">Select your state</h3>
+                   <h3 class="pop-up-step__title">Select your county and location</h3>
                    <form action="#" class="pop-up-step__find">
                         <input type="text" placeholder="Find by ZIP">
                        <button type="submit">
@@ -54,44 +54,6 @@
                         <h3 class="spoiler__title">Miami-Dade</h3>
                         <div class="spoiler__content pop-up-spoiler-content">
                             <ul class="pop-up-spoiler-content__list">
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="spoiler pop-up-step-2__item">
-                        <h3 class="spoiler__title">Miami-Dade</h3>
-                        <div class="spoiler__content">
-                        <ul class="pop-up-spoiler-content__list">
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="spoiler pop-up-step-2__item">
-                        <h3 class="spoiler__title">Miami-Dade</h3>
-                        <div class="spoiler__content">
-                        <ul class="pop-up-spoiler-content__list">
                                 <li class="pop-up-spoiler-content__item">
                                     <h4>FL Kendall</h4>
                                     <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
@@ -185,198 +147,8 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="spoiler pop-up-step-2__item">
-                        <h3 class="spoiler__title">Miami-Dade</h3>
-                        <div class="spoiler__content">
-                        <ul class="pop-up-spoiler-content__list">
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="spoiler pop-up-step-2__item">
-                        <h3 class="spoiler__title">Miami-Dade</h3>
-                        <div class="spoiler__content">
-                        <ul class="pop-up-spoiler-content__list">
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="spoiler pop-up-step-2__item">
-                        <h3 class="spoiler__title">Miami-Dade</h3>
-                        <div class="spoiler__content">
-                        <ul class="pop-up-spoiler-content__list">
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="spoiler pop-up-step-2__item">
-                        <h3 class="spoiler__title">Miami-Dade</h3>
-                        <div class="spoiler__content">
-                        <ul class="pop-up-spoiler-content__list">
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="spoiler pop-up-step-2__item">
-                        <h3 class="spoiler__title">Miami-Dade</h3>
-                        <div class="spoiler__content">
-                        <ul class="pop-up-spoiler-content__list">
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="spoiler pop-up-step-2__item">
-                        <h3 class="spoiler__title">Miami-Dade</h3>
-                        <div class="spoiler__content">
-                        <ul class="pop-up-spoiler-content__list">
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
                 </ul>
                 <ul class="pop-up-step-2__list" data-step-2-list="3">
-                    <li class="spoiler pop-up-step-2__item">
-                        <h3 class="spoiler__title">Miami-Dade</h3>
-                        <div class="spoiler__content">
-                        <ul class="pop-up-spoiler-content__list">
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="spoiler pop-up-step-2__item">
-                        <h3 class="spoiler__title">Miami-Dade</h3>
-                        <div class="spoiler__content">
-                        <ul class="pop-up-spoiler-content__list">
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="spoiler pop-up-step-2__item">
-                        <h3 class="spoiler__title">Miami-Dade</h3>
-                        <div class="spoiler__content">
-                        <ul class="pop-up-spoiler-content__list">
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="spoiler pop-up-step-2__item">
-                        <h3 class="spoiler__title">Miami-Dade</h3>
-                        <div class="spoiler__content">
-                        <ul class="pop-up-spoiler-content__list">
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                                <li class="pop-up-spoiler-content__item">
-                                    <h4>FL Kendall</h4>
-                                    <p class="pop-up-spoiler-content__subtitle">1005 SW 88th St. Miami, FL 33186</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
                     <li class="spoiler pop-up-step-2__item">
                         <h3 class="spoiler__title">Miami-Dade</h3>
                         <div class="spoiler__content">
