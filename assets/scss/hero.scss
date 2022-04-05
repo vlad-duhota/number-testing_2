@@ -1,0 +1,199 @@
+@import 'helping';
+
+// hero styilng
+.hero {
+    @media (max-width: $md3) {
+        padding-bottom: 35px;
+    }
+    &-bottom{
+        position: relative;
+        overflow: hidden;
+        padding-top: 40vw;
+        padding-bottom: 75px;
+          margin-top: 115px;
+          .book {
+            margin-top: 35px;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: url(../img/decor.svg) center left 100% / cover no-repeat;
+            left: 0;
+            top: 0;
+            @media (max-width: $md1) {
+                transform: rotateX(180deg);
+                background-size: cover;
+                width: 100vw;
+                height: 75vw;
+            }
+        }
+        @media (max-width: $md1) {
+            &::before {
+                content: "";
+                position: absolute;
+                display: block;
+                width: 100%;
+                height: 500px;
+                background: rgba($color: $bg, $alpha: 0.85);
+                left: 0;
+                top: 75vw;
+            }
+        }
+      }
+  &-main{
+        @media (max-width: $md1) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        @media (max-width: $md3) {
+            margin-top: 50px;
+        }
+        &__title {
+            font-size: rem(85px);
+            line-height: 1.15;
+            @media (max-width: 1245px) {
+                font-size: rem(50px);
+            }
+            @media (max-width: $md3) {
+                font-size: rem(28px);
+            }
+        }
+        &__cols{
+            display: flex;
+            justify-content: space-between;
+        }
+        &__form {
+            display: flex;
+            margin-top: 50px;
+            @media (max-width: $md3) {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            @media (max-width: $md3) {
+                margin-top: 35px;
+            }
+            @media (max-width: $md4) {
+                margin-top: 20px;
+            }
+            .nice-select {
+                height: 52px;
+                width: 245px;
+                display: flex;
+                align-items: center;
+                margin-right: 20px;
+                padding: 0 20px;
+                color: $dark;
+                border: 1px solid rgba($color: $dark, $alpha: 0.35);
+                font-weight: 500;
+                @media (max-width: $md3) {
+                    margin: 0;
+                    width: calc(50% - 8px);
+                }
+                @media(max-width:$md4) {
+                    width: 100%;
+                }
+                &::after {
+                    right: 20px;
+                    border-color: $dark;
+                }
+            }
+
+            .book {
+                margin-left: 15px;
+                @media (max-width: $md3) {
+                    width: 100%;
+                    margin: 0;
+                }
+            }
+        }
+        &-tests {
+            padding-right: 25px;
+            @media (max-width: $md1) {
+                margin-top: 25px;
+            }
+            &__title {
+                color: $dark;
+                font-size: rem(22px);
+                span {
+                    color: $text;
+                    font-weight: 400;
+                }
+                margin-bottom: 25px;
+                @media (max-width: $md3) {
+                    font-size: rem(16px);
+                }
+            }
+            &__list {
+                display: flex;
+                gap: 25px;
+                @media (max-width: $md3) {
+                    gap: 15px;
+                }
+                @media (max-width: $md4) {
+                    flex-direction: column;
+                }
+            }
+            &__item {
+                padding-left: 25px;
+                background: url(../img/list-marker.svg) left center / 15px 15px no-repeat;
+                @media (max-width: $md3) {
+                    font-size: rem(14px);
+                }
+            }
+        }
+    }
+  
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+    .section-title {
+        @media (max-width: $md3) {
+            max-width: 255px;
+        }
+    }
+}
+.animated {
+    &_1 {
+        stroke-dasharray: 1200;
+        stroke-dashoffset: 1200;
+        transition: stroke-dashoffset 2s;
+    }
+    &_2 {
+        stroke-dasharray: 1200;
+        stroke-dashoffset: 1200;
+        transition: stroke-dashoffset 2s;
+        transition-delay: 1s;
+    }
+    &_circle {
+        stroke-dasharray: 350;
+        stroke-dashoffset: 350;
+        transition: stroke-dashoffset 3s;
+        &_1 {
+            transition-delay: 2.3s;
+        }
+        &_2 {
+            transition-delay: 2.6s;
+        }
+        &_3 {
+            transition-delay: 2.9s;
+        }
+        &_4 {
+            transition-delay: 3.2s;
+        }
+        &_5 {
+            transform: scale(0);
+            transition: transform 0.7s;
+        }
+        &_6 {
+            transition-delay: 0.5s;
+        }
+    }
+    &.active {
+        stroke-dashoffset: 0;
+        transform: scale(1);
+    }
+}

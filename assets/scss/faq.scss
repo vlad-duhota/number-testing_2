@@ -1,0 +1,112 @@
+@import 'helping';
+
+// faq
+.faq {
+    background: $bg;
+    color: #fff;
+    padding: 85px 0;
+    position: relative;
+    .section-title {
+        @media (max-width: 1300px) {
+            br {
+                display: none;
+            }
+        }
+    }
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 20vw;
+        height: 10vw;
+        background: url(../img/circle_1.svg) center / cover no-repeat;
+        left: 0;
+        bottom: 0;
+        @media (max-width: $md1) {
+            display: none;
+        }
+    }
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 5vw;
+        height: 10vw;
+        background: url(../img/circle_2.svg) center / cover no-repeat;
+        right: 0;
+        top: 0;
+        @media(max-width:1570px) {
+            display: none;
+        }
+    }
+    .container {
+        display: flex;
+        @media (max-width: $md1) {
+            flex-direction: column;
+        }
+    }
+    &__text {
+        flex: 0 1 600px;
+        @media (max-width: $md1) {
+            flex: 1 1 100%;
+        }
+    }
+    &__list {
+        flex: 1 1 100%;
+        padding-left: 10vw;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        @media (max-width: $md1) {
+            padding-left: 0;
+            margin-top: 30px;
+        }
+    }
+    &-item {
+        position: relative;
+        padding-left: 70px;
+        @media (max-width: $md3) {
+            padding-left: 0;
+        }
+        &::before {
+            content: url(../img/faq.svg);
+            position: absolute;
+            left: 0;
+            @media (max-width: $md3) {
+                display: none;
+            }
+        }
+
+        &__title {
+            font-size: rem(22px);
+            margin-bottom: 15px;
+            font-weight: 500;
+            position: relative;
+            @media (max-width: $md3) {
+                padding-left: 35px;
+                font-size: rem(14px);
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    display: block;
+                    width: 25px;
+                    height: 25px;
+                    background: url(../img/faq.svg) center / cover no-repeat;
+                }
+            }
+        }
+        &__text {
+            color: rgba($color: #fff, $alpha: 0.55);
+            @media (max-width: $md3) {
+                font-size: rem(12px);
+            }
+        }
+    }
+    &__subtitle {
+        margin: 15px 0 35px;
+        color: rgba($color: #fff, $alpha: 0.75);
+        line-height: 1.75;
+    }
+}

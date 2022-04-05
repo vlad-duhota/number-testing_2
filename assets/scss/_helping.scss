@@ -1,0 +1,23 @@
+// vars
+$html-font-size: 16px;
+$containerWidth: 1520px;
+$containerPadding: 25px;
+$font: "Gilroy";
+// colors vars
+$primary: #e91d1f;
+$bg: #ce0d0f;
+$text: #a8a8a8;
+$dark: #282828;
+
+// media vars
+$md1: 992px;
+$md2: 768px;
+$md3: 578px;
+$md4: 375px;
+$md5: 320px;
+
+// mixins{functions}
+@function rem($fz) {
+    $rem:($fz / $html-font-size);
+    @return (floor($rem * 10) / 10) + rem;
+}

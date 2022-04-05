@@ -1,0 +1,200 @@
+// Gilroy Font
+@font-face {
+    font-family: "Gilroy";
+    font-weight: 300;
+    src: url(../fonts/Gilroy-Light.woff2);
+}
+@font-face {
+    font-family: "Gilroy";
+    font-weight: 400;
+    src: url(../fonts/Gilroy-Regular.woff2);
+}
+@font-face {
+    font-family: "Gilroy";
+    font-weight: 500;
+    src: url(../fonts/Gilroy-Medium.woff2);
+}
+@font-face {
+    font-family: "Gilroy";
+    font-weight: 600;
+    src: url(../fonts/Gilroy-Semibold.woff2);
+}
+@font-face {
+    font-family: "Gilroy";
+    font-weight: 700;
+    src: url(../fonts/Gilroy-Bold.woff2);
+}
+
+// vars
+$html-font-size: 16px;
+$containerWidth: 1520px;
+$containerPadding: 25px;
+$font: "Gilroy";
+// colors vars
+$primary: #e91d1f;
+$bg: #ce0d0f;
+$text: #a8a8a8;
+$dark: #282828;
+
+// media vars
+$md1: 992px;
+$md2: 768px;
+$md3: 578px;
+$md4: 375px;
+$md5: 320px;
+
+// mixins
+@function stripUnit($value) {
+    @return $value / ($value * 0 + 1);
+}
+
+@function rem($pxValue) {
+    @return #{stripUnit($pxValue) / stripUnit($html-font-size)}rem;
+}
+
+@mixin section_border() {
+    border-bottom: 1px solid rgba($color: #fff, $alpha: 0.1);
+}
+
+@mixin cards-container {
+    gap: 15px;
+    flex-wrap: wrap;
+}
+// global styles
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.wrapper {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: $containerWidth + $containerPadding;
+    padding: 0 $containerPadding;
+    margin: 0 auto;
+}
+
+html {
+    font-size: $html-font-size;
+}
+
+body {
+    font-size: 1rem;
+    color: $text;
+    font-family: $font, sans-serif;
+    &.no-scroll {
+        overflow: hidden;
+    }
+}
+
+input,
+textarea,
+input::placeholder,
+textarea::placeholder {
+    font-family: inherit;
+}
+input,
+textarea {
+    &:focus {
+        &::placeholder {
+            font-size: 0;
+        }
+    }
+}
+.section-title {
+    font-size: rem(50px);
+    font-weight: 500;
+    color: $dark;
+    text-transform: capitalize;
+    @media (max-width: $md1) {
+        font-size: rem(40px);
+    }
+    @media (max-width: $md2) {
+        font-size: rem(32px);
+    }
+    @media (max-width: $md3) {
+        font-size: rem(22px);
+        font-weight: 500;
+    }
+    span {
+        font-weight: 400;
+        display: block;
+    }
+    &_light {
+        color: #fff;
+    }
+}
+
+.book {
+    border: none;
+    background: $dark;
+    color: #fff;
+    padding: 16px 32px;
+    border-radius: 10px;
+    transition: background 0.3s;
+    font-weight: 600;
+    box-shadow: 0px 9px 35px rgba(40, 40, 40, 0.15);
+    @media (max-width: $md3) {
+        width: 100%;
+    }
+    &:hover {
+        background: lighten($color: $dark, $amount: 15%);
+    }
+    &_light {
+        background: #fff;
+        color: $dark;
+        box-shadow: none;
+        &:hover {
+            background: #e2e0e0;
+        }
+    }
+}
+
+section:not(.hero) {
+    @media (max-width: $md3) {
+        padding: 50px 0 !important;
+    }
+}
+
+// scrollbar
+
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+    padding: 10px;
+    background: $bg;
+    border-radius: 20px;
+    border: 6px solid #fff;
+}
+
+.wow {
+    @media (max-width: $md1) {
+        transition: none !important;
+        transform: none !important;
+        animation: none !important;
+    }
+}
+
+.slick-slide{
+    height: auto !important;
+}

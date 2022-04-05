@@ -1,0 +1,77 @@
+@import "helping";
+
+// contact
+.contact {
+    padding: 130px 0;
+    @media (max-width: $md1) {
+        padding: 50px 0;
+    }
+    .container {
+        display: flex;
+        gap: 35px;
+        @media (max-width: $md1) {
+            flex-direction: column-reverse;
+        }
+    }
+    &__text {
+        flex: 0 1 50%;
+    }
+    &-form {
+        margin-top: 50px;
+        &__input {
+            font-weight: 500;
+            font-size: rem(17px);
+            padding: 16px 20px;
+            display: block;
+            width: 100%;
+            border-radius: 10px;
+            border: 1px solid rgba(40, 40, 40, 0.15);
+            color: $dark;
+            &::placeholder {
+                color: rgba($color: $dark, $alpha: 0.35);
+            }
+        }
+        &__columns {
+            display: flex;
+            gap: 25px 35px;
+            margin-bottom: 25px;
+            @media (max-width: $md1) {
+                flex-direction: column;
+            }
+            .contact-form__input {
+                width: 50%;
+                @media (max-width: $md1) {
+                    width: 100%;
+                }
+            }
+        }
+        &__message {
+            margin-top: 25px;
+            margin-bottom: 38px;
+            height: 110px;
+            resize: none;
+        }
+    }
+    &__img {
+        flex: 0 1 50%;
+        position: relative;
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 180px;
+            height: 180px;
+            background: url(../img/contact-decor.svg) center / cover no-repeat;
+        }
+        img {
+            width: 100%;
+            height: 538px;
+            object-fit: cover;
+            @media (max-width: $md3) {
+                height: 300px;
+            }
+        }
+    }
+}
