@@ -82,23 +82,75 @@ $('.pop-up__close-btn').click(function (e) {
   $('.pop-up').removeClass('pop-up_active');
   scroll(true);
 });
+
 // step1 to step2
-$('.pop-up-step-1__item').click(function () {
-  const current = $(this).attr('data-step-1-item');
-  let lists = Array.from($(".pop-up-step-2__list"));
-  $(".pop-up-step-2__list").each(function (index) {
-    const this_object = lists[index];
-    if ($(this_object).attr('data-step-2-list') == current) {
-      $(".pop-up-step-2__list").removeClass('active');
-      $(this_object).addClass('active');
-      next_step('.pop-up-step-2', true);
-    }
+step_to_step('.pop-up-step-1__item','data-step-1-item', 'data-step-2-list', '.pop-up-step-2__list', '.pop-up-step-2');
+// step2 to step3
+step_to_step('.pop-up-spoiler-content__item', 'data-step-2-item','data-step-3', '.pop-up-step-3__list', '.pop-up-step-3');
+
+// step function
+function step_to_step(obj, data1, data2, lists_, step){
+  $(obj).click(function () {
+    const current = $(this).attr(data1);
+    let lists = Array.from($(lists_));
+    $(lists_).each(function (index) {
+      const this_object = lists[index];
+      if ($(this_object).attr(data2) == current) {
+        $(lists_).removeClass('active');
+        $(this_object).addClass('active');
+        next_step(step, true);
+      }
+    });
   });
+}
+// location vars
+var location_1;
+var location_2;
+var location_3;
+
+// location 1 get name
+$('.pop-up-step-1__item').click(function(){
+  location_1 = $(this).find('.pop-up-step-1__text').text();
+});
+// location 2 get name
+$('.pop-up-step-2__item').click(function(){
+  location_2 = $(this).find('.spoiler__title').text();
 });
 
+$('.pop-up-spoiler-content__item').click(function(){
+  location_3 = $(this).find('h4').text();
+});
+  // location 3 get name
+
+// step 3 to step4
+$('.pop-up-step-3__item').click(function(e){
+  e.preventDefault();
+  // get up-title
+  const up_title = $(this).attr('data-up');
+  // get test type
+  const test_type = $(this).attr('data-test');
+  // get time
+  const time = $(this).find('.pop-up-step-3__time').text();
+  // get time to set
+  const step_time = `Results Whitin ${time}`;
+  // get title
+  const step_title = `${test_type}(Results in ${time})`;
+  // set uptitle
+  $('.pop-up-step-4__uptitle').text(up_title);
+  // set title
+  $('.pop-up-step-4__title').text(step_title);
+  // set locations items
+  $('.pop-up-step-4__location-item_1').text(location_1);
+  $('.pop-up-step-4__location-item_2').text(location_2);
+  $('.pop-up-step-4__location-item_3').text(location_3);
+  // set time
+  $('.pop-up-step-4__item_1').text(step_time);
+  // switch to next step
+  next_step('.pop-up-step-4', true);
+});
 // spoiler
-$('.spoiler').click(function (e) {
-  $(this).toggleClass('active').find('.spoiler__content').slideToggle(300);
+$('.spoiler__title').click(function (e) {
+  $(this).parent('.spoiler').toggleClass('active').find('.spoiler__content').slideToggle(300);
 })
 
 // array for correct dots working
@@ -108,23 +160,30 @@ var steps_array = [true, false, false, false];
 // dots
 $('.pop-up__dot a').click(function (e) {
   e.preventDefault();
+  // get data attribute
   const step = $(this).attr('data-dot');
-  const number = step.replace('.pop-up-step-', '') - 1;;
+  // get num
+  const number = step.replace('.pop-up-step-', '') - 1;
+  // if we haven`t been on this step
   const can_change = steps_array[number] === true;
   if(!can_change){
     return; 
   }
+  // clear classes
   $('.pop-up__dot a').removeClass('active');
   $(this).addClass('active');
+  // switch to next step
   next_step(step, false);
 })
 
+// switch to next step function
 function next_step(obj, dots_check) {
   $('.pop-up-step').removeClass('active');
   if(dots_check){
   var dots__array = Array.from($('.pop-up__dot a'));
   const number = obj.replace('.pop-up-step-', '') - 1;;
   const can_change = steps_array[number] === true;
+  // if we hasn`t been in this step
   if(!can_change){
     steps_array[number] = true;
   }
@@ -132,6 +191,7 @@ function next_step(obj, dots_check) {
     const class_cur = $(dots__array[index]).attr('data-dot').replace('.', '');
     const class_obj = $(obj).attr('class').replace('pop-up-step ', '');
     if (class_cur == class_obj) {
+      // clear
       $('.pop-up__dot a').removeClass('active');
       $(dots__array[index]).addClass('active')
     }
