@@ -20,6 +20,7 @@
         width: 650px;
         min-height: 350px;
         transition: height .3s;
+        position: relative;
     }
     &__main{
         padding: 25px;
@@ -213,10 +214,25 @@
             }
         }
         &-4{
+            padding-bottom: 47px;
             &__uptitle{
                 font-size: rem(18px);
                 font-weight: 500;
                 margin-bottom: 10px;
+            }
+            &__btn{
+                background: $primary;
+                border: none;
+                position: absolute;
+                width: 100%;
+                bottom: 0;
+                left: 0;
+                height: 52px;
+                color: #fff;
+                font-size: rem(16px);
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
             &__title{
                 color: $dark;
