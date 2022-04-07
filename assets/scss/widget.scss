@@ -105,6 +105,9 @@
                     font-weight: 500;
                     color: rgba($color: $dark, $alpha: .5);
                 }
+                &:focus{
+                    outline: none;
+                }
             }
         }
         &-1{
@@ -221,8 +224,9 @@
                 margin-bottom: 10px;
             }
             &__btn{
-                background: $primary;
-                border: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 position: absolute;
                 width: 100%;
                 bottom: 0;
@@ -230,9 +234,12 @@
                 height: 52px;
                 color: #fff;
                 font-size: rem(16px);
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                background: $primary;
+                border: none;
+                transition: background .3s;
+                &:hover{
+                    background: darken($color: $primary, $amount: 10%);
+                }
             }
             &__title{
                 color: $dark;

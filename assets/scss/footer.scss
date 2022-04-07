@@ -30,6 +30,10 @@
         margin-left: 80px;
         gap: 20px;
         margin-right: 115px;
+        @media(max-width:1529px) {
+            margin-left: 60px;
+            margin-right: 60px;
+        }
         @media (max-width: 1300px) {
             margin: 0 auto;
             padding-right: 55px;
