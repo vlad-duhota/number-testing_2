@@ -35,6 +35,27 @@ Container::make( 'post_meta', __( 'Перша секція' ) )
     Field::make( 'text', 'hero_title_span', 'Тонкий текст звичайного заголовка' ),
 ]);
 
+Container::make( 'post_meta', __( 'Секція What' ) )
+->show_on_template('front-page.php')       // page_id
+->add_fields([
+    Field::make( 'text', 'what_title', 'Заголовок' ),
+    Field::make( 'text', 'what_title_span', 'Тонкий текст заголовка' ),
+    Field::make( 'text', 'what_subtitle', 'Підзаголовок' ),
+    Field::make( 'text', 'what_steps_title', 'Заголовок правої частини' ),
+    Field::make( 'complex', 'what_steps', 'Елементи правої частини')
+    ->set_max(3)
+    ->add_fields( array(
+       Field::make( 'text', 'what_steps_text', 'Текст Елемента' ),
+    )),
+    Field::make( 'text', 'what_bottom_title', 'Заголовок нижньої частини' ),
+    Field::make( 'text', 'what_bottom_title_span', 'Сірий текст заголовока нижньої частини' ),
+    Field::make( 'complex', 'what_list', 'Елементи нижньої частини')
+    ->set_max(3)
+    ->add_fields( array(
+       Field::make( 'text', 'what_list_text', 'Текст Елемента' ),
+    )),
+]);
+
 Container::make( 'post_meta', __( 'Віджет' ) )
 ->show_on_template('front-page.php')       // page_id
 ->add_fields([

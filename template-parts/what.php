@@ -1,5 +1,7 @@
 <?php 
     $page_id = get_the_ID();
+    $what_steps = carbon_get_post_meta($page_id, 'what_steps');
+    $what_list = carbon_get_post_meta($page_id, 'what_list')
 ?>
 
 <section class="what">
@@ -35,54 +37,43 @@
                     <div class="what__columns">
                         <div class="what-text  wow animate__animated animate__fadeInLeft">
                             <h2 class="section-title">
-                                what is covid-19 test <span>for business</span>
+                              <?php echo carbon_get_post_meta($page_id, 'what_title')?><span><?php echo carbon_get_post_meta($page_id, 'what_title_span')?></span>
                             </h2>
-                            <p class="what-text__subtitle">Fusce ut in pellentesque massa neque, pulvinar donec. Tortor
-                                aliquam ipsum quisque felis mi accumsan lectus mi lacus. Egestas aliquet accumsan amet
-                                blandit euismod amet. Sed id proin amet gravida consequat cursus tellus, nunc. Lacus
-                                fringilla sem lobortis ut. Habitant in ultricies sit dui.</p>
+                            <p class="what-text__subtitle"><?php echo carbon_get_post_meta($page_id, 'what_subtitle')?></p>
                             <button type="submit" class="book"><?php echo carbon_get_theme_option('btn')?></button>
                         </div>
                         <div class="what-steps  wow animate__animated animate__fadeInRight" data-wow-delay="300ms"
                             data-wow-duration="1.5s">
                             <h3 class="what-steps__title">
-                                and how it works?
-                            </h3>
-                            <ul class="what-steps__list">
-                                <li class="what-steps__item">
-                                    <p> Fusce ut in pellentesque massa neque, pulvinar donec. Tortor aliquam ipsum
-                                        quisque felis mi accumsan.</p>
+                             <?php echo carbon_get_post_meta($page_id, 'what_steps_title')?>
+                            </h3> 
+                            <?php if(! empty($what_steps)) : ?>
+                                <ul class="what-steps__list">
+                                <?php foreach($what_steps as $step) : ?>
+                                    <li class="what-steps__item">
+                                    <p><?php echo $step['what_steps_text']?></p>
                                 </li>
-                                <li class="what-steps__item">
-                                    <p> Habitant in ultricies sit dui. Tortor aliquam ipsum quisque felis mi accumsan
-                                        lectus mi lacus.</p>
-                                </li>
-                                <li class="what-steps__item">
-                                    <p> Fusce ut in pellentesque massa neque, pulvinar donec. Tortor aliquam ipsum
-                                        quisque felis.</p>
-                                </li>
-                            </ul>
+                                <?php endforeach ?>
+                                </ul>
+                            <?php endif ?>
                         </div>
                     </div>
                     <div class="what-bottom">
                         <h3 class="what-bottom__title wow animate__animated animate__fadeInLeft">
-                            every day we become faster and better in order to do our job better and <span>be useful to
-                                your business</span>
+                         <?php echo carbon_get_post_meta($page_id, 'what_bottom_title')?><span><?php echo carbon_get_post_meta($page_id, 'what_bottom_title_span')?></span>
                         </h3>
-                        <ul class="what-bottom__list">
-                            <li class="what-bottom__item  wow animate__animated animate__fadeInLeft"
-                                data-wow-delay="400ms">
-                                Sodales malesuada sed dictum sed massa
-                            </li>
-                            <li class="what-bottom__item  wow animate__animated animate__fadeInLeft"
-                                data-wow-delay="800ms">
-                                Vitae rhoncus non odio aenean lobortis
-                            </li>
-                            <li class="what-bottom__item  wow animate__animated animate__fadeInLeft"
-                                data-wow-delay="1200ms">
-                                Dignissim tortor neque egestas id est
-                            </li>
-                        </ul>
+                        <?php if(! empty($what_list)) : ?>
+                            <?php $time = 400?>
+                                <ul class="what-bottom__list">
+                                <?php foreach($what_list as $item) : ?>
+                                    <?php $time+=350?>
+                                    <li class="what-bottom__item  wow animate__animated animate__fadeInLeft"
+                                    data-wow-delay="<?php echo $time?>ms">
+                                       <?php echo $item['what_list_text']?>
+                                    </li>
+                                <?php endforeach ?>
+                                </ul>
+                            <?php endif ?>
                     </div>
                 </div>
             </section>
