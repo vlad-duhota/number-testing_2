@@ -43,10 +43,16 @@
     }
     &__list {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(255px, 2fr));
+        grid-template-columns: repeat(5, 1fr);
+        @media(max-width: $md3) {
+            grid-template-columns: repeat(2, 2fr);
+        }
         justify-content: center;
         row-gap: 15px;
         margin-top: 134px;
+        @media(max-width: $md1) {
+            margin-top: 9vw;
+        }
     }
 
     &__item {
@@ -58,7 +64,7 @@
             justify-content: center;
         }
         img {
-            max-width: 188px;
+           width: 100%;
         }
     }
 }

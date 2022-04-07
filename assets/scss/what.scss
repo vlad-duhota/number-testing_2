@@ -25,12 +25,15 @@
         @media (max-width: $md2) {
             width: 340px;
             height: 370px;
-            top: 30%;
+            top: 38%;
         }
         @media (max-width: $md3) {
             right: -60px;
                 top: 28%;
                 transform: rotate(-65deg);
+        }
+        @media(max-width: 425px) {
+            top: 35%;
         }
     }
     &__columns {

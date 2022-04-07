@@ -45,7 +45,7 @@
                             <?php endforeach ?>
                             </select>
                         <?php endif ?>
-                        <button type="submit" class="book"><?php echo carbon_get_post_meta($page_id, 'hero_btn_1')?></button>
+                        <button type="submit" class="book"><?php echo carbon_get_theme_option('btn')?></button>
                         </form>
                     </div>
                     </div>
@@ -56,7 +56,7 @@
                             <?php echo carbon_get_post_meta($page_id, 'hero_title')?>
                             <span><?php echo carbon_get_post_meta($page_id, 'hero_title_span')?></span>
                         </h2>
-                        <button class="book book_light wow animate__animated animate__fadeInLeft"><?php echo carbon_get_post_meta($page_id, 'hero_btn_2')?></button>
+                        <button class="book book_light wow animate__animated animate__fadeInLeft"><?php echo carbon_get_theme_option('btn')?></button>
                     </div>
                 </div>     
             </section>

@@ -61,6 +61,7 @@ $('.companies__slider').slick({
   ]
 });
 
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
@@ -84,12 +85,12 @@ $('.pop-up__close-btn').click(function (e) {
 });
 
 // step1 to step2
-step_to_step('.pop-up-step-1__item','data-step-1-item', 'data-step-2-list', '.pop-up-step-2__list', '.pop-up-step-2');
+step_to_step('.pop-up-step-1__item', 'data-step-1-item', 'data-step-2-list', '.pop-up-step-2__list', '.pop-up-step-2');
 // step2 to step3
-step_to_step('.pop-up-spoiler-content__item', 'data-step-2-item','data-step-3', '.pop-up-step-3__list', '.pop-up-step-3');
+step_to_step('.pop-up-spoiler-content__item', 'data-step-2-item', 'data-step-3', '.pop-up-step-3__list', '.pop-up-step-3');
 
 // step function
-function step_to_step(obj, data1, data2, lists_, step){
+function step_to_step(obj, data1, data2, lists_, step) {
   $(obj).click(function () {
     const current = $(this).attr(data1);
     let lists = Array.from($(lists_));
@@ -109,21 +110,21 @@ var location_2;
 var location_3;
 
 // location 1 get name
-$('.pop-up-step-1__item').click(function(){
+$('.pop-up-step-1__item').click(function () {
   location_1 = $(this).find('.pop-up-step-1__text').text();
 });
 // location 2 get name
-$('.pop-up-step-2__item').click(function(){
+$('.pop-up-step-2__item').click(function () {
   location_2 = $(this).find('.spoiler__title').text();
 });
 
-$('.pop-up-spoiler-content__item').click(function(){
+$('.pop-up-spoiler-content__item').click(function () {
   location_3 = $(this).find('h4').text();
 });
-  // location 3 get name
+// location 3 get name
 
 // step 3 to step4
-$('.pop-up-step-3__item').click(function(e){
+$('.pop-up-step-3__item').click(function (e) {
   e.preventDefault();
   // get up-title
   const up_title = $(this).attr('data-up');
@@ -166,8 +167,8 @@ $('.pop-up__dot a').click(function (e) {
   const number = step.replace('.pop-up-step-', '') - 1;
   // if we haven`t been on this step
   const can_change = steps_array[number] === true;
-  if(!can_change){
-    return; 
+  if (!can_change) {
+    return;
   }
   // clear classes
   $('.pop-up__dot a').removeClass('active');
@@ -179,24 +180,24 @@ $('.pop-up__dot a').click(function (e) {
 // switch to next step function
 function next_step(obj, dots_check) {
   $('.pop-up-step').removeClass('active');
-  if(dots_check){
-  var dots__array = Array.from($('.pop-up__dot a'));
-  const number = obj.replace('.pop-up-step-', '') - 1;;
-  const can_change = steps_array[number] === true;
-  // if we hasn`t been in this step
-  if(!can_change){
-    steps_array[number] = true;
-  }
-  $('.pop-up__dot a').each(function (index) {
-    const class_cur = $(dots__array[index]).attr('data-dot').replace('.', '');
-    const class_obj = $(obj).attr('class').replace('pop-up-step ', '');
-    if (class_cur == class_obj) {
-      // clear
-      $('.pop-up__dot a').removeClass('active');
-      $(dots__array[index]).addClass('active')
+  if (dots_check) {
+    var dots__array = Array.from($('.pop-up__dot a'));
+    const number = obj.replace('.pop-up-step-', '') - 1;;
+    const can_change = steps_array[number] === true;
+    // if we hasn`t been in this step
+    if (!can_change) {
+      steps_array[number] = true;
     }
-  });
-}
+    $('.pop-up__dot a').each(function (index) {
+      const class_cur = $(dots__array[index]).attr('data-dot').replace('.', '');
+      const class_obj = $(obj).attr('class').replace('pop-up-step ', '');
+      if (class_cur == class_obj) {
+        // clear
+        $('.pop-up__dot a').removeClass('active');
+        $(dots__array[index]).addClass('active')
+      }
+    });
+  }
   $(obj).addClass('active');
 }
 

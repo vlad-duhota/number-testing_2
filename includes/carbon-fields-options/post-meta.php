@@ -22,7 +22,6 @@ Container::make( 'post_meta', __( 'Перша секція' ) )
     ->add_fields( array(
        Field::make( 'text', 'hero_select_2_option', 'Варіант' ),
     )),
-    Field::make( 'text', 'hero_btn_1', 'Текст темної кнопки' ),
     Field::make( 'text', 'hero_tests_title', 'Заголовок блоку з тестами' ),
     Field::make( 'text', 'hero_tests_title_span', 'Сірий текст заголовока блоку з тестами' ),
     Field::make( 'complex', 'hero_tests', 'Тести ')
@@ -34,7 +33,6 @@ Container::make( 'post_meta', __( 'Перша секція' ) )
     ->set_value_type( 'url' ),
     Field::make( 'text', 'hero_title', 'Звичайний заголовок' ),
     Field::make( 'text', 'hero_title_span', 'Тонкий текст звичайного заголовка' ),
-    Field::make( 'text', 'hero_btn_2', 'Текст світлої Кнопки' ),
 ]);
 
 Container::make( 'post_meta', __( 'Віджет' ) )

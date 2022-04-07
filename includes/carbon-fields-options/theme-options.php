@@ -15,4 +15,6 @@ Container::make( 'theme_options', __('Theme options', 'crb') )
         ->set_width(40),
         Field::make( 'text', 'phone_link', 'Phone Text' )
         ->set_width(40),
+        Field::make( 'text', 'btn', 'Текст кнопок' )
+        ->set_width(20),
 ]);

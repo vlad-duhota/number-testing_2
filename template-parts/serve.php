@@ -27,7 +27,7 @@
                             <li class="serve__item">First county2</li>
                             <li class="serve__item">First county</li>
                         </ul>
-                        <button class="book">Book covid-19 tests</button>
+                        <button class="book"><?php echo carbon_get_theme_option('btn')?></button>
                     </div>
                 </div>
             </section>

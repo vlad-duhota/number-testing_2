@@ -41,7 +41,7 @@
                                 aliquam ipsum quisque felis mi accumsan lectus mi lacus. Egestas aliquet accumsan amet
                                 blandit euismod amet. Sed id proin amet gravida consequat cursus tellus, nunc. Lacus
                                 fringilla sem lobortis ut. Habitant in ultricies sit dui.</p>
-                            <button type="submit" class="book">Book covid-19 tests</button>
+                            <button type="submit" class="book"><?php echo carbon_get_theme_option('btn')?></button>
                         </div>
                         <div class="what-steps  wow animate__animated animate__fadeInRight" data-wow-delay="300ms"
                             data-wow-duration="1.5s">
