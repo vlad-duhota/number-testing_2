@@ -56,6 +56,17 @@ Container::make( 'post_meta', __( 'Секція What' ) )
     )),
 ]);
 
+Container::make( 'post_meta', __( 'Секція  Serve' ) )
+->show_on_template('front-page.php')       // page_id
+->add_fields([
+    Field::make( 'text', 'serve_big_title', 'Заголовок' ),
+    Field::make( 'text', 'serve_big_title_span', 'Тонкий текст заголовка' ),
+    Field::make( 'complex', 'serve_list', 'Локації')
+    ->add_fields( array(
+       Field::make( 'text', 'serve_list_text', 'Назва локації' ),
+    )),
+]);
+
 Container::make( 'post_meta', __( 'Віджет' ) )
 ->show_on_template('front-page.php')       // page_id
 ->add_fields([

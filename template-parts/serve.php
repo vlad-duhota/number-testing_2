@@ -1,5 +1,6 @@
 <?php 
     $page_id = get_the_ID();
+    $serve_list = carbon_get_post_meta($page_id, 'serve_list')
 ?>
 
 
@@ -9,24 +10,14 @@
                         <img src="<?php echo get_template_directory_uri()?>/assets/img/serve-bg.jpg" alt="">
                     </div>
                     <div class="serve__text wow animate__animated animate__fadeInRight">
-                        <!-- <h2 class="serve__title">we serve florida & new york on <span>this counties</span></h2> -->
-                        <ul class="serve__list">
-                            <li class="serve__item">First county</li>
-                            <li class="serve__item">First county</li>
-                            <li class="serve__item">First county</li>
-                            <li class="serve__item">First county</li>
-                            <li class="serve__item">First county</li>
-                            <li class="serve__item">First county</li>
-                            <li class="serve__item">First county</li>
-                            <li class="serve__item">First county</li>
-                            <li class="serve__item">First county</li>
-                            <li class="serve__item">First county</li>
-                            <li class="serve__item">First county</li>
-                            <li class="serve__item">First county</li>
-                            <li class="serve__item">First county3</li>
-                            <li class="serve__item">First county2</li>
-                            <li class="serve__item">First county</li>
-                        </ul>
+                        <h2 class="serve__title"><?php echo carbon_get_post_meta($page_id, 'serve_big_title')?><span><?php echo carbon_get_post_meta($page_id, 'serve_big_title_span')?></span></h2>
+                        <?php if(! empty($serve_list)) : ?>
+                            <ul class="serve__list">
+                                <?php foreach($serve_list as $serv_item) : ?>
+                                    <li class="serve__item"><?php echo $serv_item['serve_list_text']?></li>
+                                <?php endforeach ?>
+                            </ul>
+                        <?php endif ?>
                         <button class="book"><?php echo carbon_get_theme_option('btn')?></button>
                     </div>
                 </div>
