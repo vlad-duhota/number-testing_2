@@ -67,7 +67,7 @@ Container::make('post_meta', __('Секція  Serve'))
          )),
    ]);
 
-   Container::make('post_meta', __('Секція  Companies'))
+Container::make('post_meta', __('Секція  Companies'))
    ->show_on_template('front-page.php')       // page_id
    ->add_fields([
       Field::make('text', 'companies_title', 'Заголовок'),
@@ -75,18 +75,40 @@ Container::make('post_meta', __('Секція  Serve'))
       Field::make('complex', 'companies_slider', 'Слайди')
          ->add_fields(array(
             Field::make('image', 'companies_slider_img', 'Логотип компанії')
-            ->set_value_type('url'),
+               ->set_value_type('url'),
             Field::make('text', 'companies_slider_date', 'Дата'),
             Field::make('text', 'companies_slider_name', 'Назва компанії'),
             Field::make('text', 'companies_slider_text', 'Текст слайда'),
          )),
-         Field::make('complex', 'companies_list', 'Список компаній')
+      Field::make('complex', 'companies_list', 'Список компаній')
          ->set_max(5)
          ->add_fields(array(
             Field::make('image', 'companies_list_img', 'Логотип компанії')
-            ->set_value_type('url'),
+               ->set_value_type('url'),
             Field::make('text', 'companies_list_link', 'Посилання на компанію'),
          )),
+   ]);
+
+Container::make('post_meta', __('Секція  Faq'))
+   ->show_on_template('front-page.php')       // page_id
+   ->add_fields([
+      Field::make('text', 'faq_title', 'Заголовок'),
+      Field::make('text', 'faq_title_span', 'Тонкий текст заголовка'),
+      Field::make('text', 'faq_subtitle', 'Підзаголовок'),
+      Field::make('complex', 'faq_list', 'Список питань')
+         ->add_fields(array(
+            Field::make('text', 'faq_list_question', 'Питання'),
+            Field::make('text', 'faq_list_text', 'Текст'),
+         )),
+   ]);
+
+   Container::make('post_meta', __('Секція  Contact'))
+   ->show_on_template('front-page.php')       // page_id
+   ->add_fields([
+      Field::make('text', 'contact_title', 'Заголовок'),
+      Field::make('text', 'contact_title_span', 'Тонкий текст заголовка'),
+      Field::make('image', 'contact_img', 'Фото')
+      ->set_value_type('url'),
    ]);
 
 Container::make('post_meta', __('Віджет'))
@@ -110,7 +132,7 @@ Container::make('post_meta', __('Віджет'))
                         Field::make('complex', 'widget_3_tests', 'Список тестів')
                            ->add_fields([
                               Field::make('image', 'widget_3_img', 'Картинка тесту')
-                              ->set_value_type('url'),
+                                 ->set_value_type('url'),
                               Field::make('text', 'widget_3_title', 'Назва тесту'),
                               Field::make('text', 'widget_3_title_short', 'Коротка назва тесту'),
                               Field::make('text', 'widget_4_uptitle', 'Надзаголок у останньому кроці'),
