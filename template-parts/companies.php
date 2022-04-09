@@ -1,177 +1,43 @@
-<?php 
-    $page_id = get_the_ID();
+<?php
+$page_id = get_the_ID();
+$companies_slider = carbon_get_post_meta($page_id, 'companies_slider');
+$companies_list = carbon_get_post_meta($page_id, 'companies_list');
 ?>
 
 <section class="companies">
-                <div class="container">
-                    <h2 class="section-title wow animate__animated animate__fadeInLeft">
-                        all popular and big <span>companies trust us</span>
-                    </h2>
-                    <ul class="companies__slider wow animate__animated animate__fadeInLeft" data-wow-duration="1.5s">
-                        <li class="company-item">
-                            <div class="company-item__info">
-                                <img src="<?php echo get_template_directory_uri()?>/assets/img/company_1.png" class="company-item__img">
-                                <div class="company-item__info-right">
-                                    <p class="company-item__date">17.01.2022</p>
-                                    <h3 class="company-item__title">Fiveth county</h3>
-                                </div>
+    <div class="container">
+        <h2 class="section-title wow animate__animated animate__fadeInLeft">
+            <?php echo carbon_get_post_meta($page_id, 'companies_title') ?><span><?php echo carbon_get_post_meta($page_id, 'companies_title_span') ?></span>
+        </h2>
+        <?php if (!empty($companies_slider)) : ?>
+            <ul class="companies__slider wow animate__animated animate__fadeInLeft" data-wow-duration="1.5s">
+                <?php foreach ($companies_slider as $company_slide) : ?>
+                    <li class="company-item">
+                        <div class="company-item__info">
+                            <img src="<?php echo $company_slide['companies_slider_img'] ?>" class="company-item__img">
+                            <div class="company-item__info-right">
+                                <p class="company-item__date"><?php echo $company_slide['companies_slider_date'] ?></p>
+                                <h3 class="company-item__title"><?php echo $company_slide['companies_slider_name'] ?></h3>
                             </div>
-                            <p class="company-item__text">
-                                Fusce ut in pellentesque massa neque, pulvinar donec. Tortor aliquam ipsum quisque felis
-                                mi accumsan lectus mi lacus. Egestas aliquet accumsan amet blandit euismod amet. Sed id
-                                proin amet gravida consequat cursus tellus, nunc. Lacus fringilla sem lobortis ut.
-                                Habitant in ultricies sit dui lorem dolor set amerium.
-                            </p>
-                        </li>
-                        <li class="company-item">
-                            <div class="company-item__info">
-                                <img src="<?php echo get_template_directory_uri()?>/assets/img/company_2.png" class="company-item__img">
-                                <div class="company-item__info-right">
-                                    <p class="company-item__date">17.01.2022</p>
-                                    <h3 class="company-item__title">Fiveth county</h3>
-                                </div>
-                            </div>
-                            <p class="company-item__text">
-                                Fusce ut in pellentesque massa neque, pulvinar donec. Tortor aliquam ipsum quisque felis
-                                mi accumsan lectus mi lacus. Egestas aliquet accumsan amet blandit euismod amet. Sed id
-                                proin amet gravida consequat cursus tellus, nunc. Lacus fringilla sem lobortis ut.
-                                Habitant in ultricies sit dui lorem dolor set amerium.
-                            </p>
-                        </li>
-                        <li class="company-item">
-                            <div class="company-item__info">
-                                <img src="<?php echo get_template_directory_uri()?>/assets/img/company_3.png" class="company-item__img">
-                                <div class="company-item__info-right">
-                                    <p class="company-item__date">17.01.2022</p>
-                                    <h3 class="company-item__title">Fiveth county</h3>
-                                </div>
-                            </div>
-                            <p class="company-item__text">
-                                Fusce ut in pellentesque massa neque, pulvinar donec. Tortor aliquam ipsum quisque felis
-                                mi accumsan lectus mi lacus. Egestas aliquet accumsan amet blandit euismod amet. Sed id
-                                proin amet gravida consequat cursus tellus, nunc. Lacus fringilla sem lobortis ut.
-                                Habitant in ultricies sit dui lorem dolor set amerium.
-                            </p>
-                        </li>
-                        <li class="company-item">
-                            <div class="company-item__info">
-                                <img src="<?php echo get_template_directory_uri()?>/assets/img/company_1.png" class="company-item__img">
-                                <div class="company-item__info-right">
-                                    <p class="company-item__date">17.01.2022</p>
-                                    <h3 class="company-item__title">Fiveth county</h3>
-                                </div>
-                            </div>
-                            <p class="company-item__text">
-                                Fusce ut in pellentesque massa neque, pulvinar donec. Tortor aliquam ipsum quisque felis
-                                mi accumsan lectus mi lacus. Egestas aliquet accumsan amet blandit euismod amet. Sed id
-                                proin amet gravida consequat cursus tellus, nunc. Lacus fringilla sem lobortis ut.
-                                Habitant in ultricies sit dui lorem dolor set amerium.
-                            </p>
-                        </li>
-                        <li class="company-item">
-                            <div class="company-item__info">
-                                <img src="<?php echo get_template_directory_uri()?>/assets/img/company_2.png" class="company-item__img">
-                                <div class="company-item__info-right">
-                                    <p class="company-item__date">17.01.2022</p>
-                                    <h3 class="company-item__title">Fiveth county</h3>
-                                </div>
-                            </div>
-                            <p class="company-item__text">
-                                Fusce ut in pellentesque massa neque, pulvinar donec. Tortor aliquam ipsum quisque felis
-                                mi accumsan lectus mi lacus. Egestas aliquet accumsan amet blandit euismod amet. Sed id
-                                proin amet gravida consequat cursus tellus, nunc. Lacus fringilla sem lobortis ut.
-                                Habitant in ultricies sit dui lorem dolor set amerium.
-                            </p>
-                        </li>
-                        <li class="company-item">
-                            <div class="company-item__info">
-                                <img src="<?php echo get_template_directory_uri()?>/assets/img/company_3.png" class="company-item__img">
-                                <div class="company-item__info-right">
-                                    <p class="company-item__date">17.01.2022</p>
-                                    <h3 class="company-item__title">Fiveth county</h3>
-                                </div>
-                            </div>
-                            <p class="company-item__text">
-                                Fusce ut in pellentesque massa neque, pulvinar donec. Tortor aliquam ipsum quisque felis
-                                mi accumsan lectus mi lacus. Egestas aliquet accumsan amet blandit euismod amet. Sed id
-                                proin amet gravida consequat cursus tellus, nunc. Lacus fringilla sem lobortis ut.
-                                Habitant in ultricies sit dui lorem dolor set amerium.
-                            </p>
-                        </li>
-                        <li class="company-item">
-                            <div class="company-item__info">
-                                <img src="<?php echo get_template_directory_uri()?>/assets/img/company_1.png" class="company-item__img">
-                                <div class="company-item__info-right">
-                                    <p class="company-item__date">17.01.2022</p>
-                                    <h3 class="company-item__title">Fiveth county</h3>
-                                </div>
-                            </div>
-                            <p class="company-item__text">
-                                Fusce ut in pellentesque massa neque, pulvinar donec. Tortor aliquam ipsum quisque felis
-                                mi accumsan lectus mi lacus. Egestas aliquet accumsan amet blandit euismod amet. Sed id
-                                proin amet gravida consequat cursus tellus, nunc. Lacus fringilla sem lobortis ut.
-                                Habitant in ultricies sit dui lorem dolor set amerium.
-                            </p>
-                        </li>
-                        <li class="company-item">
-                            <div class="company-item__info">
-                                <img src="<?php echo get_template_directory_uri()?>/assets/img/company_2.png" class="company-item__img">
-                                <div class="company-item__info-right">
-                                    <p class="company-item__date">17.01.2022</p>
-                                    <h3 class="company-item__title">Fiveth county</h3>
-                                </div>
-                            </div>
-                            <p class="company-item__text">
-                                Fusce ut in pellentesque massa neque, pulvinar donec. Tortor aliquam ipsum quisque felis
-                                mi accumsan lectus mi lacus. Egestas aliquet accumsan amet blandit euismod amet. Sed id
-                                proin amet gravida consequat cursus tellus, nunc. Lacus fringilla sem lobortis ut.
-                                Habitant in ultricies sit dui lorem dolor set amerium.
-                            </p>
-                        </li>
-                        <li class="company-item">
-                            <div class="company-item__info">
-                                <img src="<?php echo get_template_directory_uri()?>/assets/img/company_3.png" class="company-item__img">
-                                <div class="company-item__info-right">
-                                    <p class="company-item__date">17.01.2022</p>
-                                    <h3 class="company-item__title">Fiveth county</h3>
-                                </div>
-                            </div>
-                            <p class="company-item__text">
-                                Fusce ut in pellentesque massa neque, pulvinar donec. Tortor aliquam ipsum quisque felis
-                                mi accumsan lectus mi lacus. Egestas aliquet accumsan amet blandit euismod amet. Sed id
-                                proin amet gravida consequat cursus tellus, nunc. Lacus fringilla sem lobortis ut.
-                                Habitant in ultricies sit dui lorem dolor set amerium.
-                            </p>
-                        </li>
-                    </ul>
-                    <button class="book wow animate__animated animate__fadeInLeft">Book covid-19
-                        tests</button>
-                    <ul class="companies__list">
-                        <li class="companies__item">
-                            <a href="" class="companies__link">
-                                <img src="<?php echo get_template_directory_uri()?>/assets/img/company_logo_1.png" alt="">
-                            </a>
-                        </li>
-                        <li class="companies__item">
-                            <a href="" class="companies__link">
-                                <img src="<?php echo get_template_directory_uri()?>/assets/img/company_logo_1.png" alt="">
-                            </a>
-                        </li>
-                        <li class="companies__item">
-                            <a href="" class="companies__link">
-                                <img src="<?php echo get_template_directory_uri()?>/assets/img/company_logo_1.png" alt="">
-                            </a>
-                        </li>
-                        <li class="companies__item">
-                            <a href="" class="companies__link">
-                                <img src="<?php echo get_template_directory_uri()?>/assets/img/company_logo_1.png" alt="">
-                            </a>
-                        </li>
-                        <li class="companies__item">
-                            <a href="" class="companies__link">
-                                <img src="<?php echo get_template_directory_uri()?>/assets/img/company_logo_1.png" alt="">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </section>
+                        </div>
+                        <p class="company-item__text">
+                            <?php echo $company_slide['companies_slider_text'] ?>
+                        </p>
+                    </li>
+                <?php endforeach ?>
+            </ul>
+        <?php endif ?>
+        <button class="book wow animate__animated animate__fadeInLeft"><?php echo carbon_get_theme_option('btn') ?></button>
+        <?php if (!empty($companies_list)) : ?>
+            <ul class="companies__list">
+                <?php foreach ($companies_list as $companies_item) : ?>
+                    <li class="companies__item">
+                        <a href="<?php echo $companies_item['companies__list_link'] ?>" class="companies__link">
+                            <img src="<?php echo $companies_item['companies_list_img'] ?>" alt="">
+                        </a>
+                    </li>
+                <?php endforeach ?>
+            </ul>
+        <?php endif ?>
+    </div>
+</section>

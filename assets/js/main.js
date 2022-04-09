@@ -104,6 +104,7 @@ function step_to_step(obj, data1, data2, lists_, step) {
     });
   });
 }
+
 // location vars
 var location_1;
 var location_2;
@@ -182,7 +183,7 @@ function next_step(obj, dots_check) {
   $('.pop-up-step').removeClass('active');
   if (dots_check) {
     var dots__array = Array.from($('.pop-up__dot a'));
-    const number = obj.replace('.pop-up-step-', '') - 1;;
+    const number = obj.replace('.pop-up-step-', '') - 1;
     const can_change = steps_array[number] === true;
     // if we hasn`t been in this step
     if (!can_change) {
