@@ -202,7 +202,6 @@ function next_step(obj, dots_check) {
   $(obj).addClass('active');
 }
 
-
 // remove scroll function
 function scroll(noscroll) {
   if (!noscroll) {
